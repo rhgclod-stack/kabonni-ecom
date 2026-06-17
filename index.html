@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavonni Business Consulting — Santo Domingo</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f1c; --bg-2:#10182b; --card:#151d30; --card-2:#19233a;
+  --text:#e9ecf3; --muted:#9aa3b8; --line:#24314f;
+  --gold:#f0c070; --gold-2:#d7a84a;
+  --green:#46c37b; --red:#ff6b6b;
+  --shadow: 0 10px 30px rgba(0,0,0,.28);
+  --radius:16px;
+  --font-base:15.5px;
+}
+[data-theme="light"]{
+  --bg:#f7f3eb; --bg-2:#fcf9f3; --card:#ffffff; --card-2:#faf6ef;
+  --text:#23222a; --muted:#6f6b65; --line:#e6ddd0;
+  --gold:#b87a2a; --gold-2:#d4a24a;
+  --green:#2a9d6a; --red:#c84a4a;
+  --shadow: 0 10px 28px rgba(60,40,10,.07);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,.display{font-family:'Fraunces', Georgia, serif; font-weight:600; letter-spacing:.01em;}
+a{color:var(--gold-2);text-decoration:none}
+img{display:block; max-width:100%}
+button,input,select,textarea{font:inherit}
+input,select,textarea{background:#101627;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:12px 13px;width:100%;outline:none;transition:.15s border;}
+input:focus,select:focus,textarea:focus{border-color:#3d4a6b; box-shadow:0 0 0 3px rgba(212,162,74,.11)}
+label{font-size:13.5px;color:var(--muted);display:block;margin-bottom:6px}
+small, .muted{color:var(--muted)}
+.hidden{display:none !important}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:60;background: rgba(11,15,28,.82);backdrop-filter: blur(14px);border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px;}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{width:36px;height:36px;border-radius:9px;background: radial-gradient(90% 120% at 30% 20%, #f3d08b, #c6842b 62%, #8b4f18);display:grid;place-items:center;color:#211308;font-weight:800;font-family:'Fraunces',serif;font-size:18px;box-shadow:0 4px 16px rgba(212,132,43,.22)}
+.brand-name{font-family:'Fraunces',serif;font-size:19px;white-space:nowrap}
+.brand-loc{display:block;font-size:11.5px;color:var(--muted);margin-top:-2px;font-family:'Inter',sans-serif}
+.nav-tabs{margin-left:18px;display:flex;gap:6px;flex-wrap:wrap}
+.nav-tabs button{background:transparent;border:0;color:#b8bdcf;padding:9px 14px;border-radius:9px;cursor:pointer;font-size:14.5px;font-weight:500;transition:.15s}
+.nav-tabs button:hover{color:var(--text);background:#171d30}
+.nav-tabs button.active{color:var(--gold-2);background:rgba(212,162,74,.10); box-shadow:inset 0 0 0 1px rgba(212,162,74,.22)}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pill-btn{border:1px solid var(--line);background:#13182a;color:#d6d3cb;padding:8px 12px;border-radius:999px;font-size:13.5px;cursor:pointer}
+.pill-btn.gold{border-color:rgba(212,162,74,.5);color:var(--gold-2);background:rgba(212,162,74,.075)}
+.cart-btn{display:flex;align-items:center;gap:8px}
+.badge{background:var(--gold);color:#201506;font-weight:750;font-size:11.5px;border-radius:999px;padding:2px 7px;min-width:21px;text-align:center}
+.admin-dot{width:8px;height:8px;border-radius:50%;background:#616b82;display:inline-block;margin-right:6px}
+.admin-dot.on{background:#44d18a; box-shadow:0 0 8px rgba(68,209,138,.45)}
+
+/* layout */
+.wrap{max-width:var(--max);margin:0 auto;padding:28px 20px 80px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-soft)}
+.card-pad{padding:18px}
+.section-title{font-size:28px;margin:4px 0 14px}
+.grid{display:grid;gap:18px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1020px){ .grid-4{grid-template-columns:repeat(3,1fr)} .nav-tabs{display:none} .mobile-nav{display:flex !important} }
+@media(max-width:760px){ .grid-3,.grid-4,.grid-2{grid-template-columns:repeat(2,1fr)} .topbar-inner{flex-wrap:wrap} .nav-tabs{order:3;width:100%;margin-left:0} }
+@media(max-width:520px){ .grid-3,.grid-4,.grid-2{grid-template-columns:1fr} }
+
+.btn{background:#232942;border:1px solid #303651;color:#e8e3d9;padding:11px 15px;border-radius:10px;cursor:pointer;font-weight:600;font-size:14px;transition:.15s}
+.btn:hover{background:#2a314b}
+.btn-gold{background:linear-gradient(180deg,#e5b75b,#cc8b32); color:#221507; border:0; box-shadow:0 8px 20px rgba(196,127,38,.20)}
+.btn-gold:hover{filter:brightness(1.04)}
+.btn-block{width:100%}
+.btn-sm{padding:8px 12px;font-size:13px}
+.btn-ghost{background:transparent;border-color:var(--line)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.spacer{flex:1}
+
+/* Hero boutique */
+.hero{border-radius:16px;overflow:hidden;position:relative;min-height:300px;background:#131829;border:1px solid var(--line);display:grid;align-items:end}
+.hero-media{position:absolute;inset:0}
+.hero-media img{width:100%;height:100%;object-fit:var(--hero-pos, center)}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,20,.18) 15%, rgba(7,10,20,.78) 100%)}
+.hero-text{position:relative;padding:30px 28px}
+.hero h1{font-size:44px;line-height:1.02;margin:0 0 8px}
+.hero p{color:#cfcad5;max-width:520px;margin:0}
+.hero .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* Categories */
+.cat-card{border-radius:12px;overflow:hidden;background:var(--card-2);border:1px solid var(--line);cursor:pointer;transition:.17s transform, .17s border-color}
+.cat-card:hover{transform:translateY(-2px);border-color:#3b435f}
+.cat-thumb{height:135px;background:#0f1426}
+.cat-thumb img{width:100%;height:100%;object-fit:cover}
+.cat-body{padding:12px 13px}
+.cat-body strong{display:block;font-weight:650}
+.cat-body span{color:var(--muted);font-size:13.5px}
+
+/* Product cards */
+.product-card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-soft);display:flex;flex-direction:column}
+.pc-thumb{height:170px;background:#0e1324}
+.pc-thumb img{width:100%;height:100%;object-fit:cover}
+.pc-body{padding:13px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pc-name{font-weight:650}
+.pc-price{color:var(--gold-2);font-weight:700}
+.pc-add{margin-top:auto}
+
+/* Table */
+.table-wrap{overflow:auto;border-radius:10px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:720px}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:#9aa0b1;font-weight:700;background:#161c2e}
+th,td{padding:12px 12px;border-bottom:1px solid #22283c;text-align:left;vertical-align:middle}
+tbody tr:hover{background:#171d30}
+.thumb{width:44px;height:44px;object-fit:cover;border-radius:7px;background:#0d1222;border:1px solid #262d44}
+
+/* Forms */
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.form-grid .full{grid-column:1 / -1}
+@media(max-width:680px){ .form-grid{grid-template-columns:1fr} }
+.help{font-size:12.3px;color:#9aa0b2;margin-top:5px}
+.img-preview{width:100%;max-width:280px;aspect-ratio:16/10;background:#0e1326;border:1px dashed #2d3450;border-radius:10px;overflow:hidden;display:grid;place-items:center;color:#7c8399;font-size:13.5px}
+.img-preview img{width:100%;height:100%;object-fit:cover}
+
+/* Drawer cart */
+.drawer-backdrop{position:fixed;inset:0;background:rgba(4,6,12,.54);backdrop-filter:blur(2px);z-index:80;display:none}
+.drawer-backdrop.open{display:block}
+.drawer{position:fixed;right:0;top:0;height:100%;width:420px;max-width:96vw;background:#12172a;border-left:1px solid var(--line);z-index:90;transform:translateX(100%);transition:.24s;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.drawer.open{transform:translateX(0)}
+.drawer-header{padding:16px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.drawer-body{padding:14px 16px;overflow:auto;flex:1}
+.cart-item{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #202843}
+.qbtn{background:#1a2136;border:1px solid #2c3452;color:#dcd6c9;width:30px;height:30px;border-radius:8px;cursor:pointer}
+.cart-totals{border-top:1px solid var(--line);padding:12px 16px;background:#10162a}
+.tot-line{display:flex;justify-content:space-between;margin:5px 0;color:#d1ccd0}
+.tot-line strong{color:var(--text)}
+
+/* Invoice print */
+.invoice-sheet{background:#fff;color:#212636;border-radius:12px;padding:32px;max-width:820px;margin:0 auto}
+.invoice-sheet h2,.invoice-sheet h3{color:#1b2030;font-family:'Inter',sans-serif}
+.inv-grid{display:grid;grid-template-columns:1fr 250px;gap:18px}
+.inv-muted{color:#5b6376;font-size:13.4px}
+.inv-title{font-family:'Fraunces',serif;font-size:30px;margin:0}
+.inv-table{width:100%;border-collapse:collapse;margin-top:14px}
+.inv-table th{background:#f3f1ed;color:#4d515f}
+.inv-table th,.inv-table td{border-bottom:1px solid #d7d4cf;padding:10px 8px}
+.inv-totals{width:300px;margin-left:auto;margin-top:10px;border:1px solid #dcd8cf;border-radius:10px;overflow:hidden}
+.inv-totals div{display:flex;justify-content:space-between;padding:9px 12px;border-bottom:1px solid #e7e2d9}
+.inv-totals div:last-child{background:#f8f4ea;font-weight:800}
+.inv-footer{text-align:center;color:#6d6a67;margin-top:28px;font-size:13.5px}
+
+@media print {
+  body *{visibility:hidden !important}
+  #invoicePrint, #invoicePrint *{visibility:visible !important}
+  #invoicePrint{position:absolute;left:0;top:0;width:100%;}
+  .invoice-sheet{box-shadow:none;border-radius:0;padding:12mm}
+}
+
+/* Misc */
+.chip{display:inline-flex;align-items:center;padding:4px 9px;border-radius:999px;background:#1b2136;border:1px solid #2a324d;font-size:12px;color:#c6c1b8}
+.kpi{display:grid;gap:6px;background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{font-size:24px}
+.mobile-nav{display:none;gap:8px;overflow:auto;padding:6px 0 2px; scrollbar-width:none}
+.mobile-nav button{white-space:nowrap;background:#151b2e;border:1px solid var(--line);color:#cfc9be;padding:9px 12px;border-radius:999px;font-size:13px}
+.sep{height:1px;background:var(--line);margin:14px 0}
+.sync-badge{font-size:11.7px;color:#94a08f}
+.file-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cat-edit-row{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#161c2f;margin-bottom:10px}
+.cat-edit-row img{width:56px;height:44px;object-fit:cover;border-radius:8px;background:#0f1426}
+.small{font-size:13.5px}
+.login-mask{position:fixed;inset:0;background:rgba(5,8,17,.72);backdrop-filter:blur(6px);z-index:120;display:none;align-items:center;justify-content:center}
+.login-mask.open{display:flex}
+.login-box{background:#151b2d;border:1px solid #2a324c;border-radius:16px;padding:24px;box-shadow:var(--shadow);width:100%;max-width:380px}
+.toasts{position:fixed;right:16px;bottom:16px;z-index:200;display:grid;gap:8px}
+.toast{background:#19213a;border:1px solid #2f3856;color:#e9e4d8;padding:12px 13px;border-radius:10px;box-shadow:var(--shadow-soft);font-size:13.5px;min-width:240px}
+.toast.ok{border-color:rgba(70,194,138,.45)}
+
+[data-theme="light"] input,[data-theme="light"] select,[data-theme="light"] textarea{background:#fff;color:var(--text)}
+[data-theme="light"] .topbar{background: rgba(247,243,235,.88)}
+[data-theme="light"] .nav-tabs button:hover{background:#f0e8d8}
+[data-theme="light"] .nav-tabs button.active{background:rgba(184,122,42,.10)}
+</style>
+</head>
+<body>
+
+<!-- Hidden image preloader for container assets (replace src with your container:// images if needed) -->
+<div hidden aria-hidden="true">
+  <img id="preload-cat-consult" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23161d33'/%3E%3Cstop offset='100%25' stop-color='%230e1326'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='600' height='400'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23d4a24a' font-family='Georgia' font-size='26'%3EConseil%3C/text%3E%3C/svg%3E" alt="">
+  <img id="preload-cat-formation" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23151c31' width='600' height='400'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23f0c070' font-family='Georgia' font-size='26'%3EFormation%3C/text%3E%3C/svg%3E" alt="">
+  <img id="preload-cat-fiscal" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23131a2d' width='600' height='400'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%23e2b56a' font-family='Georgia' font-size='26'%3EFiscal%3C/text%3E%3C/svg%3E" alt="">
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">K</div>
+      <div>
+        <div class="brand-name">Kavonni Business</div>
+        <span class="brand-loc">Santo Domingo — République Dominicaine</span>
+      </div>
+    </div>
+
+    <nav class="nav-tabs" id="mainNav">
+      <button data-tab="boutique" class="active" data-i18n="nav_boutique">Boutique</button>
+      <button data-tab="produits" data-i18n="nav_produits">Produits</button>
+      <button data-tab="factures" data-i18n="nav_factures">Factures</button>
+      <button data-tab="compta" data-i18n="nav_compta">Comptabilité</button>
+      <button data-tab="parametres" data-i18n="nav_parametres">Paramètres</button>
+    </nav>
+
+    <div class="top-right">
+      <button class="pill-btn" id="themeToggle" title="Thème">🌙</button>
+      <button class="pill-btn" id="currencyToggle" title="Devise">RD$</button>
+      <button class="pill-btn" id="langToggle" title="Changer la langue">ES / FR</button>
+      <button class="pill-btn" id="adminToggleBtn"><span class="admin-dot" id="adminDot"></span><span id="adminLabel">Admin</span></button>
+      <button class="pill-btn gold cart-btn" id="openCartBtn">Panier <span class="badge" id="cartCount">0</span></button>
+    </div>
+  </div>
+  <div class="topbar-inner" style="padding-top:0;padding-bottom:10px">
+    <div class="mobile-nav" id="mobileNav" style="display:none">
+      <button data-tab="boutique">Boutique</button>
+      <button data-tab="produits" data-i18n="nav_produits">Produits</button>
+      <button data-tab="factures" data-i18n="nav_factures">Factures</button>
+      <button data-tab="compta" data-i18n="nav_compta">Comptabilité</button>
+      <button data-tab="parametres" data-i18n="nav_parametres">Paramètres</button>
+    </div>
+    <div class="spacer"></div>
+    <span class="sync-badge" id="syncBadge">Sync ✓ Local</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- BOUTIQUE -->
+  <section id="view-boutique">
+    <div class="hero" id="heroBlock">
+      <div class="hero-media"><img id="heroImg" alt="Kavonni" loading="eager" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='560'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%23161c30'/%3E%3Cstop offset='1' stop-color='%230a0f1d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1400' height='560' fill='url(%23g)'/%3E%3C/svg%3E"></div>
+      <div class="hero-scrim"></div>
+      <div class="hero-text">
+        <h1 class="display" data-i18n="hero_title">Conseil d'affaires clair, fiscalité maîtrisée.</h1>
+        <p id="heroSub" class="muted" data-i18n="hero_sub">Accompagnement pour entreprises à Santo Domingo. Passez commande en ligne, recevez votre facture ITBIS conforme.</p>
+        <div class="cta-row">
+          <button class="btn btn-gold" id="heroServicesBtn" data-i18n="shop_cta">Voir nos services</button>
+          <button class="btn btn-ghost" id="heroInvoiceBtn" data-i18n="btn_create_invoice">Créer une facture</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="shopScroll" style="height:18px"></div>
+
+    <div class="row" style="align-items:center;margin:16px 0 10px">
+      <h2 class="section-title" style="margin:0" data-i18n="our_categories">Nos catégories</h2>
+      <div class="spacer"></div>
+      <button class="btn btn-sm" id="btnAllCats">Toutes</button>
+      <span class="chip" id="activeCatChip" style="display:none"></span>
+    </div>
+    <div class="grid grid-4" id="categoryGrid"></div>
+
+    <div class="sep"></div>
+
+    <div class="row" style="align-items:center;margin:6px 0 12px">
+      <h3 style="margin:0;font-size:22px" id="shopListTitle">Produits & Services</h3>
+      <div class="spacer"></div>
+      <input id="shopSearch" placeholder="Rechercher..." style="max-width:260px">
+    </div>
+    <div class="grid grid-4" id="productGrid"></div>
+    <p class="muted" id="emptyShopMsg" style="display:none;margin-top:8px">Aucun produit dans cette catégorie pour le moment.</p>
+  </section>
+
+  <!-- PRODUITS -->
+  <section id="view-produits" class="hidden">
+    <div class="row" style="align-items:center;margin-bottom:12px">
+      <h2 class="section-title" style="margin:0">Produits / Services</h2>
+      <div class="spacer"></div>
+      <button class="btn btn-sm" id="newProductBtn">+ Nouveau</button>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start">
+      <div class="card card-pad">
+        <h3 style="margin-top:0">Fiche produit</h3>
+        <form id="productForm" class="form-grid">
+          <input type="hidden" id="prod_id">
+          <div>
+            <label>Nom</label>
+            <input id="prod_name" required placeholder="Ex. Constitution SRL">
+          </div>
+          <div>
+            <label>Catégorie</label>
+            <select id="prod_cat" required></select>
+          </div>
+          <div>
+            <label>Type</label>
+            <select id="prod_type"><option>Produit</option><option>Service</option></select>
+          </div>
+          <div>
+            <label>Prix RD$</label>
+            <input id="prod_price" type="number" step="0.01" min="0" required>
+          </div>
+          <div>
+            <label>TVA %</label>
+            <select id="prod_tva"><option value="0">0%</option><option value="8">8%</option><option value="18" selected>18%</option></select>
+          </div>
+          <div>
+            <label>Vidéo (YouTube / Vimeo)</label>
+            <input id="prod_video" placeholder="https://youtube.com/…">
+            <div class="help">Aide-mémoire : mets ta vidéo en <b>Non répertoriée</b>.</div>
+          </div>
+          <div class="full">
+            <label>Description</label>
+            <textarea id="prod_desc" rows="3" placeholder="Brève description…"></textarea>
+          </div>
+          <div class="full">
+            <label>Photo produit</label>
+            <div class="file-row">
+              <div class="img-preview" style="max-width:190px;aspect-ratio:1/1"><span id="prodImgPlaceholder">Aperçu</span><img id="prodImgPreview" class="hidden" alt=""></div>
+              <div>
+                <input type="file" id="prod_image_file" accept="image/*">
+                <div class="help">Compression auto → ~450px, ~25KB. Thumb 44×44.</div>
+              </div>
+            </div>
+          <div class="full row">
+            <button class="btn btn-gold" type="submit">Enregistrer</button>
+            <button class="btn btn-ghost" type="button" id="prodResetBtn">Réinitialiser</button>
+            <span class="muted small">TVA : ITBIS RD</span>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <div class="card card-pad" style="margin-bottom:14px">
+          <div class="row" style="align-items:center">
+            <h3 style="margin:0">Catégories</h3>
+            <div class="spacer"></div>
+            <button class="btn btn-sm" id="addCatBtn">+ Catégorie</button>
+          </div>
+          <div id="catEditor" style="margin-top:10px"></div>
+          <div class="help">Clique le crayon pour éditer nom + photo de catégorie.</div>
+        </div>
+
+        <div class="table-wrap card">
+          <table id="productTable">
+            <thead><tr>
+              <th style="width:54px"></th><th>Nom</th><th>Catégorie</th><th>Type</th><th>Prix</th><th>TVA</th><th></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTURES -->
+  <section id="view-factures" class="hidden">
+    <div class="row" style="align-items:center;margin-bottom:12px">
+      <h2 class="section-title" style="margin:0" data-i18n="invoices_title">Factures</h2>
+      <div class="spacer"></div>
+      <button class="btn btn-sm btn-gold" id="newInvoiceBtn" data-i18n="new_invoice">Nouvelle facture</button>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start">
+      <div class="card card-pad">
+        <h3 style="margin-top:0">Nouvelle facture</h3>
+        <form id="invoiceForm" class="form-grid">
+          <div><label>Client – Nom</label><input id="inv_client_name" required></div>
+          <div><label>RNC / SIRET (facultatif)</label><input id="inv_client_rnc" placeholder="Optionnel"></div>
+          <div><label>Email</label><input id="inv_client_email" type="email"></div>
+          <div><label>Téléphone</label><input id="inv_client_phone"></div>
+          <div class="full"><label>Adresse client</label><input id="inv_client_address"></div>
+
+          <div class="full sep" style="margin:6px 0"></div>
+          <div class="full"><strong>Lignes</strong></div>
+          <div class="full">
+            <div class="table-wrap">
+              <table id="invLinesTable" style="min-width:560px">
+                <thead><tr><th>Description</th><th style="width:90px">Qté</th><th style="width:140px">Prix</th><th style="width:130px">Montant</th><th style="width:44px"></th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <button class="btn btn-sm" type="button" id="addLineBtn" style="margin-top:8px">+ Ligne</button>
+          </div>
+
+          <div>
+            <label>TVA %</label>
+            <select id="inv_tva"><option value="0">0%</option><option value="8">8%</option><option value="18" selected>18%</option></select>
+          </div>
+          <div>
+            <label>Date</label>
+            <input id="inv_date" type="date">
+          </div>
+
+          <div class="full card" style="background:#151d31;border-color:#2b3451">
+            <div class="row" style="justify-content:space-between"><span>Sous-total HT</span><strong id="inv_ht">RD$ 0.00</strong></div>
+            <div class="row" style="justify-content:space-between"><span>TVA</span><strong id="inv_tvaAmt">RD$ 0.00</strong></div>
+            <div class="row" style="justify-content:space-between;font-size:18px"><span>Total TTC</span><strong id="inv_ttc" style="color:var(--gold-2)">RD$ 0.00</strong></div>
+          </div>
+
+          <div class="full row">
+            <button class="btn btn-gold" type="submit">Générer facture</button>
+            <button class="btn" type="button" id="invPreviewBtn">Prévisualiser</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card card-pad">
+        <h3 style="margin-top:0">Historique</h3>
+        <div class="table-wrap">
+          <table id="invoiceListTable" style="min-width:520px">
+            <thead><tr><th>N°</th><th>Date</th><th>Client</th><th>TTC</th><th></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="muted small">Numérotation séquentielle : 20260001, 20260002…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPTABILITÉ -->
+  <section id="view-compta" class="hidden">
+    <div class="row" style="align-items:center;margin-bottom:10px">
+      <h2 class="section-title" style="margin:0" data-i18n="accounting_title">Comptabilité — Rapport mensuel</h2>
+      <div class="spacer"></div>
+      <select id="comptaMonth" style="width:auto"></select>
+      <select id="comptaYear" style="width:auto"></select>
+      <button class="btn btn-sm" id="exportCsvBtn" data-i18n="export_csv">Export CSV</button>
+      <button class="btn btn-sm btn-gold" id="printComptaBtn" data-i18n="print_monthly_report">Imprimer Rapport mensuel</button>
+    </div>
+
+    <div class="grid grid-3" style="margin-bottom:14px">
+      <div class="kpi"><span class="muted">Recettes</span><b id="kpiRecettes">RD$ 0.00</b><span class="small muted">HT / TVA / TTC détaillés</span></div>
+      <div class="kpi"><span class="muted">Dépenses</span><b id="kpiDepenses">RD$ 0.00</b><span class="small muted">HT / TVA</span></div>
+      <div class="kpi"><span class="muted">Solde du mois</span><b id="kpiSolde" style="color:var(--gold-2)">RD$ 0.00</b></div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card card-pad">
+        <h3 style="margin-top:0">Détail par catégorie</h3>
+        <div class="table-wrap">
+          <table id="comptaCatTable" style="min-width:480px">
+            <thead><tr><th>Catégorie</th><th>HT</th><th>TVA</th><th>TTC</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card card-pad">
+        <div class="row" style="align-items:center"><h3 style="margin:0">Dépenses du mois</h3><div class="spacer"></div><button class="btn btn-sm" id="addExpenseBtn">+ Dépense</button></div>
+        <div class="table-wrap" style="margin-top:10px">
+          <table id="expenseTable" style="min-width:480px">
+            <thead><tr><th>Date</th><th>Libellé</th><th>HT</th><th>TVA %</th><th>TTC</th><th></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="help">Taux ITBIS : 0% / 8% / 18%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARAMETRES -->
+  <section id="view-parametres" class="hidden">
+    <h2 class="section-title">Paramètres</h2>
+    <div class="grid grid-2" style="align-items:start">
+      <div class="card card-pad">
+        <h3 style="margin-top:0">Entreprise</h3>
+        <form id="settingsForm" class="form-grid">
+          <div><label>Nom société *</label><input id="set_company" required></div>
+          <div><label>RNC société *</label><input id="set_rnc" required placeholder="Requis pour enregistrer"></div>
+          <div class="full"><label>Adresse</label><input id="set_address"></div>
+          <div><label>Tél</label><input id="set_phone" type="tel"></div>
+          <div><label>Email</label><input id="set_email" type="email"></div>
+
+          <div class="full sep"></div>
+          <div><label>Taux USD / DOP</label><input id="set_usd" type="number" step="0.01" placeholder="59.50"></div>
+          <div></div>
+          <div><label>PayPal</label><input id="set_paypal" type="text" placeholder="paypal.me / email"></div>
+          <div><label>Revolut</label><input id="set_revolut" type="text" placeholder="@kavonni / lien"></div>
+
+          <div class="full sep"></div>
+          <h3 style="margin:2px 0">Site Web Public</h3>
+          <div class="full small muted">Images optimisées auto (max 1200px, q 0.65). Alerte si &gt; 250KB.</div>
+
+          <div class="full">
+            <label>Image Accueil</label>
+            <div class="file-row">
+              <div class="img-preview"><span>Accueil</span><img id="prev_home" class="hidden" alt=""></div>
+              <div style="flex:1;min-width:200px">
+                <input type="file" id="file_home" accept="image/*">
+                <div style="margin-top:6px"><label>Position</label>
+                  <select id="pos_home"><option value="top">Haut</option><option value="center" selected>Centre</option><option value="bottom">Bas</option></select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="full">
+            <label>Image À propos 1</label>
+            <div class="file-row">
+              <div class="img-preview"><span>À propos 1</span><img id="prev_about1" class="hidden" alt=""></div>
+              <div style="flex:1;min-width:200px">
+                <input type="file" id="file_about1" accept="image/*">
+                <div style="margin-top:6px"><label>Position</label>
+                  <select id="pos_about1"><option value="top">Haut</option><option value="center" selected>Centre</option><option value="bottom">Bas</option></select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="full">
+            <label>Image À propos 2</label>
+            <div class="file-row">
+              <div class="img-preview"><span>À propos 2</span><img id="prev_about2" class="hidden" alt=""></div>
+              <div style="flex:1;min-width:200px">
+                <input type="file" id="file_about2" accept="image/*">
+                <div style="margin-top:6px"><label>Position</label>
+                  <select id="pos_about2"><option value="top">Haut</option><option value="center" selected>Centre</option><option value="bottom">Bas</option></select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="full sep"></div>
+          <h3 style="margin:2px 0">Mot de passe admin</h3>
+          <div><label>Mot de passe actuel</label><input id="adm_current" type="password" autocomplete="current-password" placeholder="••••••••"></div>
+          <div><label>Nouveau mot de passe</label><input id="adm_new" type="password" autocomplete="new-password" placeholder="Laisser vide pour ne pas changer"></div>
+
+          <div class="full row" style="margin-top:6px">
+            <button class="btn btn-gold" type="submit">Sauvegarder</button>
+            <button class="btn" type="button" id="exportSettingsBtn">Export JSON</button>
+            <label class="btn" style="cursor:pointer;margin:0">Import JSON<input type="file" id="importSettingsFile" accept="application/json" hidden></label>
+            <button class="btn btn-ghost" type="button" id="resetSettingsBtn" style="color:#e58a8a">Reset</button>
+          </div>
+          <p class="help full">Sauvegarde locale (localStorage). Session admin via sessionStorage.</p>
+        </form>
+      </div>
+
+      <div class="card card-pad">
+        <h3 style="margin-top:0">À propos – Aperçu public</h3>
+        <div class="grid grid-2">
+          <div class="img-preview"><img id="aboutPrev1" alt="" class="hidden"><span id="aboutPrev1ph">À propos 1</span></div>
+          <div class="img-preview"><img id="aboutPrev2" alt="" class="hidden"><span id="aboutPrev2ph">À propos 2</span></div>
+        </div>
+        <p class="muted small" style="margin-top:12px">
+          Société : <strong id="aboutCompanyName">Kavonni Business Consulting</strong><br>
+          <span id="aboutCompanyLine">Santo Domingo — RNC : —</span>
+        </p>
+        <div class="sep"></div>
+        <h4 style="margin:0 0 6px">Infos techniques</h4>
+        <ul class="muted small" style="line-height:1.7;margin:0;padding-left:18px">
+          <li>Langue : FR / ES toggle – taxes ITBIS – devise RD$</li>
+          <li>Images lazy-load, cart count au démarrage</li>
+          <li>Carga instantánea depuis localStorage, sync Firebase (simulé)</li>
+          <li>Password autocomplete correct, session admin persistante</li>
+          <li>Sync fiable – <b>Sync ✓ Local</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- CART DRAWER -->
+<div class="drawer-backdrop" id="cartBackdrop"></div>
+<aside class="drawer" id="cartDrawer" aria-hidden="true">
+  <div class="drawer-header">
+    <strong>Votre panier</strong>
+    <button class="btn btn-sm btn-ghost" id="closeCartBtn">Fermer</button>
+  </div>
+  <div class="drawer-body">
+    <div id="cartItems"></div>
+    <div id="cartEmpty" class="muted" style="display:none">Votre panier est vide.</div>
+    <div class="sep"></div>
+    <h4 style="margin:6px 0">Coordonnées client</h4>
+    <div class="form-grid" style="grid-template-columns:1fr 1fr">
+      <div><label>Nom</label><input id="cart_name" placeholder="Nom / Raison sociale"></div>
+      <div><label>RNC (facultatif)</label><input id="cart_rnc" placeholder="Optionnel"></div>
+      <div><label>Email</label><input id="cart_email" type="email"></div>
+      <div><label>Téléphone</label><input id="cart_phone"></div>
+      <div class="full"><label>Adresse client</label><input id="cart_address"></div>
+    </div>
+    <p class="help">RNC client facultatif. S'il est renseigné, il apparaît sur la facture. Sinon, rien n'est affiché.</p>
+    <p class="help">TVA boutique calculée auto à 18% (ITBIS).</p>
+  </div>
+  <div class="cart-totals">
+    <div class="tot-line"><span>Sous-total HT</span><span id="cart_ht">RD$ 0.00</span></div>
+    <div class="tot-line"><span>TVA 18%</span><span id="cart_tva">RD$ 0.00</span></div>
+    <div class="tot-line"><span><strong>Total TTC</strong></span><span><strong id="cart_ttc">RD$ 0.00</strong></span></div>
+    <button class="btn btn-gold btn-block" style="margin-top:10px" id="checkoutBtn">Commander & générer la facture</button>
+  </div>
+</aside>
+
+<!-- INVOICE PREVIEW MODAL -->
+<div class="login-mask" id="invoiceModal" style="align-items:flex-start;overflow:auto;padding:24px">
+  <div style="width:100%;max-width:900px;margin:20px auto">
+    <div class="card card-pad" style="margin-bottom:12px">
+      <div class="row" style="align-items:center;flex-wrap:wrap;gap:8px">
+        <strong>Aperçu facture</strong>
+        <div class="spacer"></div>
+        <button class="btn btn-sm" id="invPrintBtn">PDF / Imprimer</button>
+        <button class="btn btn-sm" id="invEmailBtn">Email</button>
+        <button class="btn btn-sm" id="invWaBtn">WhatsApp</button>
+        <button class="btn btn-sm btn-gold" id="invCloseBtn">Retour à l'application</button>
+      </div>
+    <div id="invoicePrint">
+      <div class="invoice-sheet" id="invoiceSheet"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div class="login-mask" id="loginMask">
+  <div class="login-box">
+    <h3 style="margin-top:0;font-family:'Fraunces',serif;font-size:24px">Connexion Admin</h3>
+    <p class="muted small">Accès Produits / Factures / Comptabilité / Paramètres</p>
+    <label>Mot de passe</label>
+    <input id="loginPass" type="password" autocomplete="current-password" placeholder="••••••••">
+    <div class="row" style="margin-top:12px">
+      <button class="btn btn-gold" id="loginBtn">Se connecter</button>
+      <button class="btn btn-ghost" id="loginCancel">Annuler</button>
+    </div>
+    <p class="help">Par défaut: <code>admin123</code> (modifiable dans Paramètres)</p>
+  </div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<script>
+/* ---------- i18n / basics ---------- */
+const i18n = {
+  fr: {
+    nav_boutique: "Boutique",
+    nav_produits: "Produits",
+    nav_factures: "Factures",
+    nav_compta: "Comptabilité",
+    nav_parametres: "Paramètres",
+    hero_title: "Conseil d'affaires clair, fiscalité maîtrisée.",
+    hero_sub: "Accompagnement pour entreprises à Santo Domingo. Passez commande en ligne, recevez votre facture ITBIS conforme.",
+    btn_services: "Voir nos services",
+    btn_create_invoice: "Créer une facture",
+    our_categories: "Nos catégories",
+    products_services: "Produits & Services",
+    search_placeholder: "Rechercher…",
+    add_to_cart: "Ajouter au panier",
+    added: "✓ Ajouté",
+    all: "Toutes",
+    empty_cat: "Aucun produit dans cette catégorie pour le moment",
+    cart_title: "Panier",
+    cart_empty: "Panier vide",
+    client_name: "Nom",
+    client_rnc: "RNC",
+    client_email: "Email",
+    client_phone: "Téléphone",
+    client_address: "Adresse client",
+    total_ht: "Total HT",
+    tva: "TVA",
+    total_ttc: "Total TTC",
+    checkout: "Commander – Générer facture",
+    invoices_title: "Factures",
+    new_invoice: "Nouvelle facture",
+    client_name_label: "Client – Nom",
+    client_rnc_label: "RNC / SIRET (facultatif)",
+    lines: "Lignes",
+    description: "Description",
+    qty: "Qté",
+    price: "Prix",
+    amount: "Montant",
+    tva_rate: "TVA %",
+    date: "Date",
+    subtotal_ht: "Sous-total HT",
+    generate_invoice: "Générer facture",
+    preview: "Prévisualiser",
+    history: "Historique",
+    invoice_number: "N°",
+    invoice_client: "Client",
+    accounting_title: "Comptabilité — Rapport mensuel",
+    receipts: "Recettes",
+    expenses: "Dépenses",
+    balance_month: "Solde du mois",
+    export_csv: "Export CSV",
+    print_monthly_report: "Imprimer Rapport mensuel",
+    detail_by_category: "Détail par catégorie",
+    category: "Catégorie",
+    monthly_expenses: "Dépenses du mois",
+    help_itbis: "Taux ITBIS : 0% / 8% / 18%",
+    settings_title: "Paramètres",
+    company: "Entreprise",
+    company_name: "Nom société",
+    rnc_company: "RNC société",
+    address: "Adresse",
+    phone: "Téléphone",
+    email: "Email",
+    rates: "Taux",
+    usd_dop: "USD → DOP",
+    payment: "Paiement",
+    paypal: "PayPal",
+    revolut: "Revolut",
+    website_public: "Site Web Public",
+    home_image: "Image Accueil",
+    about_image_1: "Image À propos 1",
+    about_image_2: "Image À propos 2",
+    image_position: "Position",
+    pos_top: "Haut",
+    pos_center: "Centre",
+    pos_bottom: "Bas",
+    security_admin: "Sécurité Admin",
+    admin_password: "Mot de passe admin",
+    save: "Sauvegarder",
+    export_json: "Export JSON",
+    import_json: "Import JSON",
+    reset: "Reset",
+    products_admin: "Produits / Services",
+    product_name: "Nom produit",
+    product_category: "Catégorie",
+    product_type: "Type",
+    product_price: "Prix RD$",
+    product_tva: "TVA %",
+    product_desc: "Description",
+    product_photo: "Photo produit",
+    product_video: "Vidéo (YouTube/Vimeo)",
+    video_help: "Aide-mémoire : mets ta vidéo en <b>Non répertoriée</b>.",
+    save_product: "Enregistrer",
+    reset_form: "Réinitialiser",
+    categories: "Catégories",
+    edit_cat_help: "Clique le crayon pour éditer nom + photo de catégorie.",
+    add_category: "+ Catégorie",
+    invoice_title: "FACTURE",
+    thank_you: "Merci pour votre confiance – Kavonni Business Consulting",
+    print: "Imprimer",
+    close: "Fermer",
+    admin_connected: "Admin · connecté",
+    admin: "Admin",
+    cart: "Panier"
+  },
+  es: {
+    nav_boutique: "Tienda",
+    nav_produits: "Productos",
+    nav_factures: "Facturas",
+    nav_compta: "Contabilidad",
+    nav_parametres: "Ajustes",
+    hero_title: "Asesoría clara, fiscalidad bajo control.",
+    hero_sub: "Acompañamiento para empresas en Santo Domingo. Compra en línea, recibe tu factura ITBIS conforme.",
+    btn_services: "Ver nuestros servicios",
+    btn_create_invoice: "Crear factura",
+    our_categories: "Nuestras categorías",
+    products_services: "Productos y Servicios",
+    search_placeholder: "Buscar…",
+    add_to_cart: "Añadir al carrito",
+    added: "✓ Añadido",
+    all: "Todas",
+    empty_cat: "Ningún producto en esta categoría por el momento",
+    cart_title: "Carrito",
+    cart_empty: "Carrito vacío",
+    client_name: "Nombre",
+    client_rnc: "RNC",
+    client_email: "Email",
+    client_phone: "Teléfono",
+    client_address: "Dirección del cliente",
+    total_ht: "Total HT",
+    tva: "ITBIS",
+    total_ttc: "Total TTC",
+    checkout: "Pedir – Generar factura",
+    invoices_title: "Facturas",
+    new_invoice: "Nueva factura",
+    client_name_label: "Cliente – Nombre",
+    client_rnc_label: "RNC / SIRET (opcional)",
+    lines: "Líneas",
+    description: "Descripción",
+    qty: "Cant.",
+    price: "Precio",
+    amount: "Importe",
+    tva_rate: "ITBIS %",
+    date: "Fecha",
+    subtotal_ht: "Subtotal HT",
+    generate_invoice: "Generar factura",
+    preview: "Previsualizar",
+    history: "Historial",
+    invoice_number: "N°",
+    invoice_client: "Cliente",
+    accounting_title: "Contabilidad — Informe mensual",
+    receipts: "Ingresos",
+    expenses: "Gastos",
+    balance_month: "Saldo del mes",
+    export_csv: "Exportar CSV",
+    print_monthly_report: "Imprimir informe mensual",
+    detail_by_category: "Detalle por categoría",
+    category: "Categoría",
+    monthly_expenses: "Gastos del mes",
+    help_itbis: "Tasas ITBIS: 0% / 8% / 18%",
+    settings_title: "Ajustes",
+    company: "Empresa",
+    company_name: "Nombre empresa",
+    rnc_company: "RNC empresa",
+    address: "Dirección",
+    phone: "Teléfono",
+    email: "Email",
+    rates: "Tasas",
+    usd_dop: "USD → DOP",
+    payment: "Pago",
+    paypal: "PayPal",
+    revolut: "Revolut",
+    website_public: "Sitio Web Público",
+    home_image: "Imagen Inicio",
+    about_image_1: "Imagen Acerca de 1",
+    about_image_2: "Imagen Acerca de 2",
+    image_position: "Posición",
+    pos_top: "Arriba",
+    pos_center: "Centro",
+    pos_bottom: "Abajo",
+    security_admin: "Seguridad Admin",
+    admin_password: "Contraseña admin",
+    save: "Guardar",
+    export_json: "Exportar JSON",
+    import_json: "Importar JSON",
+    reset: "Reset",
+    products_admin: "Productos / Servicios",
+    product_name: "Nombre producto",
+    product_category: "Categoría",
+    product_type: "Tipo",
+    product_price: "Precio RD$",
+    product_tva: "ITBIS %",
+    product_desc: "Descripción",
+    product_photo: "Foto producto",
+    product_video: "Vídeo (YouTube/Vimeo)",
+    video_help: "Recuerda: pon tu vídeo en <b>No listado</b>.",
+    save_product: "Guardar",
+    reset_form: "Restablecer",
+    categories: "Categorías",
+    edit_cat_help: "Haz clic en el lápiz para editar nombre + foto de categoría.",
+    add_category: "+ Categoría",
+    invoice_title: "FACTURE",
+    thank_you: "Gracias por su confianza – Kavonni Business Consulting",
+    print: "Imprimir",
+    close: "Cerrar",
+    admin_connected: "Admin · conectado",
+    admin: "Admin",
+    cart: "Carrito"
+  }
+};
+let LANG = localStorage.getItem('kbc_lang') || 'fr';
+function t(k){ return (i18n[LANG] && i18n[LANG][k]) || i18n.fr[k] || k; }
+function applyLang(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    const val = t(key);
+    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){ el.placeholder = val; } else { el.innerHTML = val; }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+  });
+  const shopTitle = document.getElementById('shopListTitle');
+  if(shopTitle) shopTitle.textContent = t('products_services');
+  const allBtn = document.getElementById('btnAllCats');
+  if(allBtn) allBtn.textContent = t('all');
+  // hero texts from settings (editable)
+  const s = read(LS.settings, settings) || {};
+  const ht = document.querySelector('[data-i18n="hero_title"]');
+  if(ht) ht.textContent = s.heroTitle || t('hero_title');
+  const hs = document.querySelector('[data-i18n="hero_sub"]');
+  if(hs) hs.textContent = s.heroSub || t('hero_sub');
+  renderShop();
+  if(typeof renderProductsTable === 'function') renderProductsTable();
+  if(typeof renderInvoicesList === 'function') renderInvoicesList();
+  if(typeof renderCompta === 'function') renderCompta();
+}
+
+/* ---------- Storage / seed ---------- */
+const LS = {
+  products: 'kbc_products',
+  categories: 'kbc_categories',
+  invoices: 'kbc_invoices',
+  settings: 'kbc_settings',
+  cart: 'kbc_cart',
+  expenses: 'kbc_expenses',
+  invCounter: 'kbc_invoice_counter'
+};
+const $ = (s, r=document)=>r.querySelector(s);
+const $$ = (s, r=document)=>[...r.querySelectorAll(s)];
+
+function read(key, fallback){ try{ const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback }catch(e){ return fallback } }
+function write(key, val){ localStorage.setItem(key, JSON.stringify(val)); pulseSync(); }
+
+let products = read(LS.products, null);
+let categories = read(LS.categories, null);
+let invoices = read(LS.invoices, []);
+let expenses = read(LS.expenses, []);
+let cart = read(LS.cart, []);
+let settings = read(LS.settings, null);
+
+function seed(){
+  if(!categories){
+    categories = [
+      {id:'c1', name:'Conseil Stratégique', image: $('#preload-cat-consult').src},
+      {id:'c2', name:'Formation', image: $('#preload-cat-formation').src},
+      {id:'c3', name:'Fiscal & Comptable', image: $('#preload-cat-fiscal').src},
+    ];
+    write(LS.categories, categories);
+  }
+  if(!products){
+    products = [
+      {id:'p1', name:'Diagnostic express 90 min', categoryId:'c1', type:'Service', price:8500, tva:18, description:'Session de cadrage stratégique, livrable PDF.', image: categories[0].image, video:''},
+      {id:'p2', name:'Atelier Pricing RD', categoryId:'c2', type:'Service', price:12500, tva:18, description:'Formation pratique ITBIS et tarification.', image: categories[1].image, video:''},
+      {id:'p3', name:'Tenue mensuelle – Starter', categoryId:'c3', type:'Service', price:18000, tva:18, description:'Comptabilité mensuelle + déclaration ITBIS.', image: categories[2].image, video:''},
+    ];
+    write(LS.products, products);
+  }
+  if(!settings){
+    settings = {
+      companyName:'Kavonni Business Consulting',
+      rnc:'133-04789-6',
+      address:'Santo Domingo, République Dominicaine',
+      phone:'+1 809 639 5784',
+      email:'kavonni.bc@gmail.com',
+      currency:'DOP',
+      usdRate:59.5,
+      paypal:'paypal.me/kavonni',
+      revolut:'@kavonni.do',
+      siteImages:{
+        home:'',
+        about1:'',
+        about2:'',
+        positions:{home:'center', about1:'center', about2:'center'}
+      },
+      adminPassword:'admin123'
+    };
+    write(LS.settings, settings);
+  }
+}
+seed();
+
+/* sync indicator */
+let syncTimer;
+function pulseSync(){
+  const b = $('#syncBadge');
+  b.textContent = 'Sync …';
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(()=> b.textContent='Sync ✓ Local', 420);
+}
+
+/* ---------- Admin session ---------- */
+function isAdmin(){ return sessionStorage.getItem('kbc_admin_session') === '1'; }
+function setAdmin(on){
+  if(on) sessionStorage.setItem('kbc_admin_session','1');
+  else sessionStorage.removeItem('kbc_admin_session');
+  updateAdminUI();
+}
+function requireAdmin(tab){
+  // v3.3 fix: allow all tabs locally
+  return true;
+}
+function updateAdminUI(){
+  $('#adminDot').classList.toggle('on', isAdmin());
+  $('#adminLabel').textContent = isAdmin() ? 'Admin · connecté' : 'Admin';
+  document.querySelectorAll('.admin-only-msg')?.forEach(()=>{});
+}
+updateAdminUI();
+
+/* Login modal */
+const loginMask = $('#loginMask');
+$('#adminToggleBtn').addEventListener('click', ()=>{
+  if(isAdmin()){ setAdmin(false); toast('Session admin fermée'); return; }
+  openLogin();
+});
+function openLogin(){ loginMask.classList.add('open'); $('#loginPass').focus(); }
+function closeLogin(){ loginMask.classList.remove('open'); $('#loginPass').value=''; }
+$('#loginCancel').addEventListener('click', closeLogin);
+$('#loginBtn').addEventListener('click', doLogin);
+$('#loginPass').addEventListener('keydown', e=>{ if(e.key==='Enter') doLogin(); });
+function doLogin(){
+  const pass = $('#loginPass').value;
+  const real = (read(LS.settings, settings)||{}).adminPassword || 'admin123';
+  if(pass === real){
+    setAdmin(true);
+    closeLogin();
+    toast('Connecté', true);
+  } else {
+    toast('Mot de passe incorrect');
+    $('#loginPass').select();
+  }
+}
+
+/* ---------- Navigation ---------- */
+const views = ['boutique','produits','factures','compta','parametres'];
+function goTab(tab){
+  if(!requireAdmin(tab)) return;
+  views.forEach(v=>{
+    const el = $('#view-'+v);
+    if(el) el.classList.toggle('hidden', v!==tab);
+  });
+  $$('#mainNav button, #mobileNav button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.tab===tab);
+  });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+$$('#mainNav button, #mobileNav button').forEach(b=> b.addEventListener('click', ()=>goTab(b.dataset.tab)));
+
+/* ---------- Helpers ---------- */
+function uid(){ return Math.random().toString(36).slice(2,9) }
+function getCurrency(){ try{ return (read(LS.settings, settings)||{}).currency || 'DOP'; }catch(e){ return 'DOP'; } }
+function money(n){
+  const cur = getCurrency();
+  const v = Number(n)||0;
+  if(cur === 'EUR') return new Intl.NumberFormat('fr-FR', {minimumFractionDigits:2, maximumFractionDigits:2}).format(v) + ' €';
+  return 'RD$ ' + v.toFixed(2);
+}
+function toast(msg, ok=false){
+  const t = document.createElement('div');
+  t.className='toast'+(ok?' ok':'');
+  t.textContent=msg;
+  $('#toasts').appendChild(t);
+  setTimeout(()=>{ t.style.opacity='.0'; t.style.transform='translateY(4px)'; }, 2200);
+  setTimeout(()=> t.remove(), 2600);
+}
+function catName(id){ return (categories.find(c=>c.id===id)||{}).name || '—' }
+function productById(id){ return products.find(p=>p.id===id) }
+
+/* ---------- Image compression ---------- */
+function compressImage(file, maxW, quality, cb){
+  const reader = new FileReader();
+  reader.onload = e=>{
+    const img = new Image();
+    img.onload = ()=>{
+      const scale = Math.min(1, maxW / img.width);
+      const w = Math.round(img.width * scale), h = Math.round(img.height * scale);
+      const canvas = document.createElement('canvas');
+      canvas.width=w; canvas.height=h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img,0,0,w,h);
+      const dataUrl = canvas.toDataURL('image/jpeg', quality);
+      const approxKB = Math.round((dataUrl.length*0.75)/1024);
+      cb(dataUrl, approxKB);
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ---------- SHOP ---------- */
+let shopCatFilter = null;
+let shopSearch = '';
+
+function renderCategories(){
+  const grid = $('#categoryGrid');
+  grid.innerHTML='';
+  categories.forEach(c=>{
+    const count = products.filter(p=>p.categoryId===c.id).length;
+    const card = document.createElement('div');
+    card.className='cat-card';
+    card.innerHTML = `<div class="cat-thumb"><img loading="lazy" src="${c.image}" alt=""></div><div class="cat-body"><strong>${c.name}</strong><span>${count} ${LANG==='es'?'producto(s)':'produit(s)'}</span></div>`;
+    card.addEventListener('click', ()=>{ shopCatFilter = c.id; renderShop(); $('#activeCatChip').style.display='inline-flex'; $('#activeCatChip').textContent = c.name; window.scrollTo({top: $('#shopListTitle').offsetTop-90, behavior:'smooth'}); });
+    grid.appendChild(card);
+  });
+}
+function renderShop(){
+  const grid = $('#productGrid');
+  grid.innerHTML='';
+  let list = [...products];
+  if(shopCatFilter) list = list.filter(p=>p.categoryId===shopCatFilter);
+  if(shopSearch) list = list.filter(p=> p.name.toLowerCase().includes(shopSearch.toLowerCase()));
+  $('#emptyShopMsg').style.display = list.length ? 'none' : 'block';
+  $('#emptyShopMsg').textContent = t('empty_cat');
+  list.forEach(p=>{
+    const card = document.createElement('div');
+    card.className='product-card';
+    card.innerHTML = `
+      <div class="pc-thumb"><img loading="lazy" src="${p.image||''}" alt=""></div>
+      <div class="pc-body">
+        <div class="pc-name">${p.name}</div>
+        <div class="muted small">${catName(p.categoryId)} · ${p.type}</div>
+        <div class="pc-price">${money(p.price)}</div>
+        <button class="btn btn-gold btn-block pc-add">${t('add_to_cart')}</button>
+      </div>`;
+    const btn = card.querySelector('.pc-add');
+    btn.addEventListener('click', ()=>{
+      addToCart(p.id);
+      const old = btn.textContent;
+      btn.textContent = t('added');
+      btn.disabled = true;
+      setTimeout(()=>{ btn.textContent = old; btn.disabled=false; }, 1050);
+    });
+    grid.appendChild(card);
+  });
+}
+$('#btnAllCats').addEventListener('click', ()=>{ shopCatFilter=null; $('#activeCatChip').style.display='none'; renderShop(); });
+$('#shopSearch').addEventListener('input', e=>{ shopSearch = e.target.value; renderShop(); });
+
+renderCategories();
+renderShop();
+
+/* ---------- CART ---------- */
+function saveCart(){ write(LS.cart, cart); updateCartCount(); }
+function updateCartCount(){
+  const n = cart.reduce((s,i)=>s+i.qty,0);
+  $('#cartCount').textContent = n;
+}
+updateCartCount();
+
+function addToCart(productId){
+  const found = cart.find(i=>i.productId===productId);
+  if(found) found.qty++;
+  else cart.push({productId, qty:1});
+  saveCart();
+  renderCart();
+  openCart();
+}
+function renderCart(){
+  const box = $('#cartItems');
+  box.innerHTML='';
+  if(cart.length===0){ $('#cartEmpty').style.display='block'; }
+  else { $('#cartEmpty').style.display='none'; }
+  let ht = 0;
+  cart.forEach(item=>{
+    const p = productById(item.productId);
+    if(!p) return;
+    const lineHT = p.price * item.qty;
+    ht += lineHT;
+    const div = document.createElement('div');
+    div.className='cart-item';
+    div.innerHTML = `
+      <img class="thumb" src="${p.image||''}" alt="">
+      <div><strong style="font-size:13.8px">${p.name}</strong><div class="muted small">${money(p.price)}</div></div>
+      <div style="text-align:right">
+        <div style="display:flex;gap:6px;align-items:center;justify-content:flex-end">
+          <button class="qbtn" data-act="minus">−</button>
+          <span style="width:26px;text-align:center">${item.qty}</span>
+          <button class="qbtn" data-act="plus">+</button>
+        </div>
+        <div class="small muted" style="margin-top:4px">${money(lineHT)}</div>
+      </div>`;
+    div.querySelector('[data-act="minus"]').onclick = ()=>{ item.qty--; if(item.qty<=0) cart = cart.filter(c=>c!==item); saveCart(); renderCart(); };
+    div.querySelector('[data-act="plus"]').onclick = ()=>{ item.qty++; saveCart(); renderCart(); };
+    box.appendChild(div);
+  });
+  const tva = ht * 0.18;
+  const ttc = ht + tva;
+  $('#cart_ht').textContent = money(ht);
+  $('#cart_tva').textContent = money(tva);
+  $('#cart_ttc').textContent = money(ttc);
+}
+function openCart(){ $('#cartDrawer').classList.add('open'); $('#cartBackdrop').classList.add('open'); renderCart(); }
+function closeCart(){ $('#cartDrawer').classList.remove('open'); $('#cartBackdrop').classList.remove('open'); }
+$('#openCartBtn').addEventListener('click', openCart);
+$('#closeCartBtn').addEventListener('click', closeCart);
+$('#cartBackdrop').addEventListener('click', closeCart);
+
+/* Checkout -> generate invoice */
+$('#checkoutBtn').addEventListener('click', ()=>{
+  if(cart.length===0){ toast('Panier vide'); return; }
+  const client = {
+    name: $('#cart_name').value.trim() || 'Client comptoir',
+    rnc: $('#cart_rnc').value.trim(),
+    email: $('#cart_email').value.trim(),
+    phone: $('#cart_phone').value.trim(),
+    address: $('#cart_address').value.trim()
+  };
+  const lines = cart.map(ci=>{
+    const p = productById(ci.productId);
+    return { desc: p ? p.name : 'Article', qty: ci.qty, price: p ? p.price : 0 };
+  });
+  const inv = buildInvoiceObject(client, lines, 18);
+  invoices.push(inv);
+  write(LS.invoices, invoices);
+  cart = [];
+  write(LS.cart, cart);
+  renderCart(); updateCartCount(); closeCart();
+  toast('Facture générée : '+inv.number, true);
+  showInvoice(inv);
+  renderInvoicesList();
+  renderCompta();
+});
+
+/* ---------- PRODUCTS ADMIN ---------- */
+function refreshProdCatSelect(){
+  const sel = $('#prod_cat');
+  sel.innerHTML='';
+  categories.forEach(c=>{
+    const o=document.createElement('option'); o.value=c.id; o.textContent=c.name; sel.appendChild(o);
+  });
+}
+refreshProdCatSelect();
+
+function renderProductTable(){
+  const tb = $('#productTable tbody');
+  tb.innerHTML='';
+  products.forEach(p=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML = `<td><img class="thumb" loading="lazy" src="${p.image||''}" alt=""></td>
+      <td><strong>${p.name}</strong><div class="muted small">${(p.description||'').slice(0,60)}</div></td>
+      <td>${catName(p.categoryId)}</td>
+      <td>${p.type}</td>
+      <td>${money(p.price)}</td>
+      <td>${p.tva}%</td>
+      <td style="white-space:nowrap">
+        <button class="btn btn-sm" data-edit="${p.id}">Éditer</button>
+        <button class="btn btn-sm btn-ghost" data-del="${p.id}" style="color:#e58a8a">Suppr.</button>
+      </td>`;
+    tb.appendChild(tr);
+  });
+  tb.querySelectorAll('[data-edit]').forEach(b=> b.addEventListener('click', ()=> editProduct(b.dataset.edit)));
+  tb.querySelectorAll('[data-del]').forEach(b=> b.addEventListener('click', ()=> { if(confirm('Supprimer ?')){ products = products.filter(x=>x.id!==b.dataset.del); write(LS.products, products); renderProductTable(); renderCategories(); renderShop(); toast('Supprimé'); }}));
+}
+renderProductTable();
+
+let currentProdImage = '';
+$('#prod_image_file').addEventListener('change', e=>{
+  const file = e.target.files[0]; if(!file) return;
+  compressImage(file, 450, 0.55, (dataUrl, kb)=>{
+    currentProdImage = dataUrl;
+    $('#prodImgPreview').src = dataUrl;
+    $('#prodImgPreview').classList.remove('hidden');
+    $('#prodImgPlaceholder').classList.add('hidden');
+    if(kb > 90) toast('Image > env. 90KB : '+kb+'KB');
+  });
+});
+
+function editProduct(id){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  $('#prod_id').value = p.id;
+  $('#prod_name').value = p.name;
+  $('#prod_cat').value = p.categoryId;
+  $('#prod_type').value = p.type;
+  $('#prod_price').value = p.price;
+  $('#prod_tva').value = String(p.tva);
+  $('#prod_desc').value = p.description||'';
+  $('#prod_video').value = p.video||'';
+  currentProdImage = p.image||'';
+  if(currentProdImage){ $('#prodImgPreview').src = currentProdImage; $('#prodImgPreview').classList.remove('hidden'); $('#prodImgPlaceholder').classList.add('hidden'); }
+  goTab('produits');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+$('#prodResetBtn').addEventListener('click', ()=>{ $('#productForm').reset(); $('#prod_id').value=''; currentProdImage=''; $('#prodImgPreview').classList.add('hidden'); $('#prodImgPlaceholder').classList.remove('hidden'); });
+
+$('#productForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const id = $('#prod_id').value || uid();
+  const obj = {
+    id,
+    name: $('#prod_name').value.trim(),
+    categoryId: $('#prod_cat').value,
+    type: $('#prod_type').value,
+    price: parseFloat($('#prod_price').value)||0,
+    tva: parseInt($('#prod_tva').value,10),
+    description: $('#prod_desc').value.trim(),
+    video: $('#prod_video').value.trim(),
+    image: currentProdImage || ''
+  };
+  const idx = products.findIndex(x=>x.id===id);
+  if(idx>=0) products[idx]=obj; else products.push(obj);
+  write(LS.products, products);
+  renderProductTable(); renderCategories(); renderShop();
+  toast('Produit enregistré', true);
+  $('#productForm').reset(); $('#prod_id').value=''; currentProdImage=''; $('#prodImgPreview').classList.add('hidden'); $('#prodImgPlaceholder').classList.remove('hidden');
+});
+$('#newProductBtn').addEventListener('click', ()=>{ $('#prodResetBtn').click(); });
+
+/* Category editor */
+function renderCatEditor(){
+  const box = $('#catEditor');
+  box.innerHTML='';
+  categories.forEach(c=>{
+    const row = document.createElement('div');
+    row.className='cat-edit-row';
+    row.innerHTML = `<img src="${c.image}" alt=""><div style="flex:1"><strong>${c.name}</strong><div class="muted small">${products.filter(p=>p.categoryId===c.id).length} produits</div></div>
+    <button class="btn btn-sm" data-editcat="${c.id}">✏️</button>
+    <button class="btn btn-sm btn-ghost" data-delcat="${c.id}" style="color:#e58a8a">🗑</button>`;
+    box.appendChild(row);
+  });
+  box.querySelectorAll('[data-editcat]').forEach(b=> b.addEventListener('click', ()=> editCategory(b.dataset.editcat)));
+  box.querySelectorAll('[data-delcat]').forEach(b=> b.addEventListener('click', ()=>{
+    const id=b.dataset.delcat;
+    if(products.some(p=>p.categoryId===id)){ toast('Catégorie utilisée par des produits'); return; }
+    if(!confirm('Supprimer la catégorie ?')) return;
+    categories = categories.filter(c=>c.id!==id);
+    write(LS.categories, categories);
+    refreshProdCatSelect(); renderCatEditor(); renderCategories(); renderShop(); renderProductTable();
+  }));
+}
+renderCatEditor();
+
+function editCategory(id){
+  const c = categories.find(x=>x.id===id); if(!c) return;
+  const newName = prompt('Nom de la catégorie :', c.name);
+  if(newName===null) return;
+  c.name = newName.trim() || c.name;
+  // Option: change image
+  if(confirm('Changer la photo de catégorie ?')){
+    const inp = document.createElement('input');
+    inp.type='file'; inp.accept='image/*';
+    inp.onchange = ()=>{
+      const f = inp.files[0]; if(!f) return;
+      compressImage(f, 650, 0.62, (dataUrl)=>{
+        c.image = dataUrl;
+        write(LS.categories, categories);
+        refreshAllCategoryViews();
+        toast('Catégorie mise à jour', true);
+      });
+    };
+    inp.click();
+  } else {
+    write(LS.categories, categories);
+    refreshAllCategoryViews();
+    toast('Catégorie mise à jour', true);
+  }
+}
+function refreshAllCategoryViews(){
+  refreshProdCatSelect(); renderCatEditor(); renderCategories(); renderShop(); renderProductTable();
+}
+$('#addCatBtn').addEventListener('click', ()=>{
+  const name = prompt('Nom de la nouvelle catégorie :');
+  if(!name) return;
+  const id = 'c_'+uid();
+  const newCat = {id, name: name.trim(), image: categories[0]?.image || ''};
+  // ask image
+  const inp = document.createElement('input');
+  inp.type='file'; inp.accept='image/*';
+  inp.onchange = ()=>{
+    const f = inp.files[0];
+    if(f){
+      compressImage(f, 650, 0.62, (dataUrl)=>{
+        newCat.image = dataUrl;
+        categories.push(newCat);
+        write(LS.categories, categories);
+        refreshAllCategoryViews();
+      });
+    } else {
+      categories.push(newCat);
+      write(LS.categories, categories);
+      refreshAllCategoryViews();
+    }
+  };
+  inp.click();
+  // fallback if user cancels file picker quickly
+  setTimeout(()=>{
+    if(!categories.find(c=>c.id===id)){
+      categories.push(newCat);
+      write(LS.categories, categories);
+      refreshAllCategoryViews();
+    }
+  }, 900);
+});
+
+/* ---------- INVOICES ---------- */
+function nextInvoiceNumber(){
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let r = '';
+  for(let i=0;i<8;i++) r += chars[Math.floor(Math.random()*chars.length)];
+  return 'KBC-WEB-' + r;
+}
+function buildInvoiceObject(client, lines, tvaRate){
+  const ht = lines.reduce((s,l)=> s + (l.qty * l.price), 0);
+  const tva = ht * (tvaRate/100);
+  const ttc = ht + tva;
+  return {
+    id: uid(),
+    number: nextInvoiceNumber(),
+    date: new Date().toISOString().slice(0,10),
+    client,
+    lines,
+    tvaRate,
+    totals:{ht, tva, ttc}
+  };
+}
+
+/* invoice form lines */
+const invLinesTbody = $('#invLinesTable tbody');
+function addInvLine(desc='', qty=1, price=0){
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td><input class="il-desc" value="${desc}" placeholder="Description"></td>
+  <td><input class="il-qty" type="number" min="0" step="1" value="${qty}"></td>
+  <td><input class="il-price" type="number" min="0" step="0.01" value="${price}"></td>
+  <td class="il-amt" style="white-space:nowrap">RD$ 0.00</td>
+  <td><button type="button" class="btn btn-sm btn-ghost il-del">×</button></td>`;
+  invLinesTbody.appendChild(tr);
+  tr.querySelector('.il-del').onclick = ()=>{ tr.remove(); recalcInvoiceForm(); };
+  tr.querySelectorAll('input').forEach(i=> i.addEventListener('input', recalcInvoiceForm));
+  recalcInvoiceForm();
+}
+$('#addLineBtn').addEventListener('click', ()=> addInvLine());
+function getInvoiceLinesFromForm(){
+  return [...invLinesTbody.querySelectorAll('tr')].map(tr=>({
+    desc: tr.querySelector('.il-desc').value || '—',
+    qty: parseFloat(tr.querySelector('.il-qty').value)||0,
+    price: parseFloat(tr.querySelector('.il-price').value)||0
+  })).filter(l=> l.qty>0);
+}
+function recalcInvoiceForm(){
+  const lines = getInvoiceLinesFromForm();
+  const tvaRate = parseInt($('#inv_tva').value,10)||0;
+  let ht=0;
+  [...invLinesTbody.querySelectorAll('tr')].forEach((tr, i)=>{
+    const l = lines[i]; if(!l) return;
+    const amt = l.qty * l.price;
+    ht += amt;
+    tr.querySelector('.il-amt').textContent = money(amt);
+  });
+  const tva = ht * tvaRate/100;
+  $('#inv_ht').textContent = money(ht);
+  $('#inv_tvaAmt').textContent = money(tva);
+  $('#inv_ttc').textContent = money(ht+tva);
+}
+$('#inv_tva').addEventListener('change', recalcInvoiceForm);
+addInvLine('Prestation de conseil',1,0);
+
+function renderInvoicesList(){
+  const tb = $('#invoiceListTable tbody');
+  tb.innerHTML='';
+  [...invoices].reverse().forEach(inv=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML = `<td><strong>${inv.number}</strong></td><td>${inv.date}</td><td>${inv.client?.name||''}</td><td>${money(inv.totals.ttc)}</td>
+    <td><button class="btn btn-sm" data-open="${inv.id}">Ouvrir</button></td>`;
+    tb.appendChild(tr);
+  });
+  tb.querySelectorAll('[data-open]').forEach(b=> b.addEventListener('click', ()=>{
+    const inv = invoices.find(x=>x.id===b.dataset.open); if(inv) showInvoice(inv);
+  }));
+}
+renderInvoicesList();
+
+$('#invoiceForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const client = {
+    name: $('#inv_client_name').value.trim(),
+    rnc: $('#inv_client_rnc').value.trim(),
+    email: $('#inv_client_email').value.trim(),
+    phone: $('#inv_client_phone').value.trim(),
+    address: $('#inv_client_address').value.trim()
+  };
+  if(!client.name){ toast('Nom client requis'); return; }
+  const lines = getInvoiceLinesFromForm();
+  if(lines.length===0){ toast('Ajoutez au moins une ligne'); return; }
+  const tvaRate = parseInt($('#inv_tva').value,10);
+  const inv = buildInvoiceObject(client, lines, tvaRate);
+  const customDate = $('#inv_date').value;
+  if(customDate) inv.date = customDate;
+  invoices.push(inv);
+  write(LS.invoices, invoices);
+  renderInvoicesList(); renderCompta();
+  toast('Facture '+inv.number+' créée', true);
+  showInvoice(inv);
+});
+$('#invPreviewBtn').addEventListener('click', ()=>{
+  const client = {
+    name: $('#inv_client_name').value.trim() || 'Client Démo',
+    rnc: $('#inv_client_rnc').value.trim(),
+    email: $('#inv_client_email').value.trim(),
+    phone: $('#inv_client_phone').value.trim(),
+    address: $('#inv_client_address').value.trim()
+  };
+  const lines = getInvoiceLinesFromForm();
+  const tvaRate = parseInt($('#inv_tva').value,10);
+  const ht = lines.reduce((s,l)=>s+l.qty*l.price,0);
+  const tva = ht * tvaRate/100;
+  showInvoice({id:'preview', number:'PREVIEW', date: $('#inv_date').value || new Date().toISOString().slice(0,10), client, lines, tvaRate, totals:{ht,tva,ttc:ht+tva}});
+});
+$('#newInvoiceBtn').addEventListener('click', ()=>{
+  $('#invoiceForm').reset();
+  invLinesTbody.innerHTML='';
+  addInvLine();
+  $('#inv_date').value = new Date().toISOString().slice(0,10);
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+$('#inv_date').value = new Date().toISOString().slice(0,10);
+
+/* Invoice rendering */
+function showInvoice(inv){
+  const s = read(LS.settings, settings);
+  const fmtDate = (d)=>{ if(!d) return ''; const p = d.split('-'); return p.length===3 ? `${p[2]}/${p[1]}/${p[0]}` : d; };
+  const companyHtml = `
+    <div style="line-height:1.55">
+      <div style="font-weight:700;font-size:20px;margin-bottom:6px">${s.companyName||'Kavonni Business Consulting'}</div>
+      <div style="color:#9aa3b8;font-size:14px">
+        RNC : ${s.rnc||'133-04789-6'}<br>
+        ${s.address||'Santo Domingo, République Dominicaine'}<br>
+        Cél.: ${s.phone||'+1 809 639 5784'} – Email: ${s.email||'kavonni.bc@gmail.com'}
+      </div>
+    </div>`;
+  const clientHtml = `
+    <div style="margin-top:22px;line-height:1.55">
+      <div style="color:#c7c9d3;font-weight:600;font-size:14px">Client :</div>
+      <div style="font-weight:700;font-size:20px;margin:4px 0">${inv.client?.name||''}</div>
+      <div style="color:#9aa3b8;font-size:14px">
+        ${inv.client?.rnc ? `RNC : ${inv.client.rnc}<br>` : ''}
+        ${[inv.client?.phone ? `Cél.: ${inv.client.phone}` : '', inv.client?.email ? `Email: ${inv.client.email}` : ''].filter(Boolean).join(' – ')}
+        ${inv.client?.address ? `<br>${inv.client.address}` : ''}
+      </div>
+    </div>`;
+  const rows = inv.lines.map(l=>{
+    const amt = l.qty * l.price;
+    return `<tr>
+      <td style="padding:14px 8px">${l.desc}</td>
+      <td style="text-align:center;padding:14px 8px">${l.qty}</td>
+      <td style="text-align:right;padding:14px 8px">${money(l.price)}</td>
+      <td style="text-align:right;padding:14px 8px">${money(amt)}</td>
+    </tr>`;
+  }).join('');
+  $('#invoiceSheet').innerHTML = `
+    <div style="background:#0f1424;color:#e6e6ea;border-radius:14px;padding:32px;max-width:900px;margin:auto;font-family:Inter,system-ui,sans-serif">
+      <div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:18px">
+        ${companyHtml}
+        <div style="text-align:right;min-width:220px">
+          <div style="font-weight:700;font-size:22px;margin-bottom:8px">Facture</div>
+          <div style="color:#9aa3b8;font-size:14px;line-height:1.6">
+            Date : ${fmtDate(inv.date)}<br>
+            Numéro : ${inv.number}
+          </div>
+        </div>
+      </div>
+      ${clientHtml}
+      <table style="width:100%;border-collapse:collapse;margin-top:28px;font-size:14.5px">
+        <thead>
+          <tr style="color:#9aa3b8;text-transform:uppercase;font-size:12.5px;letter-spacing:.04em;border-bottom:1px solid #2a324a">
+            <th style="text-align:left;padding:10px 8px;font-weight:600">DESCRIPTION</th>
+            <th style="text-align:center;padding:10px 8px;font-weight:600">QUANTITÉ</th>
+            <th style="text-align:right;padding:10px 8px;font-weight:600">PRIX</th>
+            <th style="text-align:right;padding:10px 8px;font-weight:600">MONTANT</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows || '<tr><td colspan="4" style="padding:14px;color:#7a8195">—</td></tr>'}
+          <tr><td colspan="4" style="border-bottom:1px solid #1f2538"></td></tr>
+        </tbody>
+      </table>
+      <div style="display:flex;justify-content:flex-end;margin-top:18px">
+        <table style="font-size:14.5px;min-width:280px">
+          <tr><td style="color:#9aa3b8;padding:6px 18px">Sous-total</td><td style="text-align:right;padding:6px 8px">${money(inv.totals.ht)}</td></tr>
+          <tr><td style="color:#9aa3b8;padding:6px 18px">TVA (${inv.tvaRate}%)</td><td style="text-align:right;padding:6px 8px">${money(inv.totals.tva)}</td></tr>
+          <tr><td colspan="2" style="border-bottom:1px solid #2a324a;padding-top:4px"></td></tr>
+          <tr><td style="font-weight:700;padding:10px 18px">Total TTC</td><td style="text-align:right;font-weight:700;color:#f0c070;padding:10px 8px">${money(inv.totals.ttc)}</td></tr>
+        </table>
+      </div>
+      <div style="border-top:1px solid #23293d;margin-top:28px;padding-top:18px;text-align:center;color:#9aa3b8;font-size:13.5px">
+        Merci pour votre confiance – Kavonni Business Consulting
+      </div>
+    </div>`;
+  $('#invoiceModal').classList.add('open');
+  window.currentInvoice = inv;
+}
+$('#invCloseBtn').addEventListener('click', ()=> $('#invoiceModal').classList.remove('open'));
+$('#invPrintBtn').addEventListener('click', ()=>{
+  window.print();
+  // La fenêtre d'impression se ferme toute seule après impression/annulation
+});
+$('#invEmailBtn').addEventListener('click', ()=>{
+  const inv = window.currentInvoice; if(!inv) return;
+  const subject = encodeURIComponent(`Facture ${inv.number} – Kavonni Business Consulting`);
+  const body = encodeURIComponent(`Bonjour ${inv.client?.name || ''},\n\nVeuillez trouver ci-joint votre facture ${inv.number} du ${inv.date}.\n\nSous-total HT : ${money(inv.totals.ht)}\nTVA ${inv.tvaRate}% : ${money(inv.totals.tva)}\nTotal TTC : ${money(inv.totals.ttc)}\n\nMerci pour votre confiance – Kavonni Business Consulting\nSanto Domingo – RNC ${(read(LS.settings, settings)||{}).rnc||''}`);
+  window.open(`mailto:${encodeURIComponent(inv.client?.email||'') }?subject=${subject}&body=${body}`, '_blank');
+});
+$('#invWaBtn').addEventListener('click', ()=>{
+  const inv = window.currentInvoice; if(!inv) return;
+  const s = read(LS.settings, settings);
+  const text = `Facture ${inv.number} – Kavonni Business Consulting\nClient: ${inv.client?.name||''}${inv.client?.rnc ? `\nRNC: ${inv.client.rnc}`:''}\nDate: ${inv.date}\nHT: ${money(inv.totals.ht)}\nTVA ${inv.tvaRate}%: ${money(inv.totals.tva)}\nTTC: ${money(inv.totals.ttc)}\n\nMerci pour votre confiance – Kavonni Business Consulting\nRNC ${s.rnc||''}`;
+  window.open('https://wa.me/?text='+encodeURIComponent(text), '_blank');
+});
+
+/* ---------- COMPTA ---------- */
+function initComptaSelectors(){
+  const mSel = $('#comptaMonth'), ySel = $('#comptaYear');
+  const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  months.forEach((m,i)=>{ const o=document.createElement('option'); o.value=String(i+1).padStart(2,'0'); o.textContent=m; mSel.appendChild(o); });
+  const now = new Date();
+  [2025,2026,2027].forEach(y=>{ const o=document.createElement('option'); o.value=y; o.textContent=y; ySel.appendChild(o); });
+  mSel.value = String(now.getMonth()+1).padStart(2,'0');
+  ySel.value = '2026';
+  mSel.addEventListener('change', renderCompta);
+  ySel.addEventListener('change', renderCompta);
+}
+initComptaSelectors();
+
+function getPeriodInvoices(){
+  const m = $('#comptaMonth').value;
+  const y = $('#comptaYear').value;
+  return invoices.filter(inv => inv.date.startsWith(`${y}-${m}`));
+}
+function getPeriodExpenses(){
+  const m = $('#comptaMonth').value;
+  const y = $('#comptaYear').value;
+  return expenses.filter(e => (e.date||'').startsWith(`${y}-${m}`));
+}
+
+function renderCompta(){
+  const invs = getPeriodInvoices();
+  const exps = getPeriodExpenses();
+  let recHT=0, recTVA=0, recTTC=0;
+  const byCat = {};
+  invs.forEach(inv=>{
+    recHT += inv.totals.ht; recTVA += inv.totals.tva; recTTC += inv.totals.ttc;
+    // naive category attribution: split equally – or just "Ventes"
+    byCat['Ventes'] = byCat['Ventes'] || {ht:0,tva:0,ttc:0};
+    byCat['Ventes'].ht += inv.totals.ht;
+    byCat['Ventes'].tva += inv.totals.tva;
+    byCat['Ventes'].ttc += inv.totals.ttc;
+  });
+  let depHT=0, depTVA=0, depTTC=0;
+  exps.forEach(e=>{
+    depHT += e.ht; depTVA += e.tva; depTTC += e.ttc;
+  });
+  $('#kpiRecettes').textContent = money(recTTC);
+  $('#kpiDepenses').textContent = money(depTTC);
+  $('#kpiSolde').textContent = money(recTTC - depTTC);
+
+  const tbody = $('#comptaCatTable tbody');
+  tbody.innerHTML='';
+  Object.entries(byCat).forEach(([name, v])=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${name}</td><td>${money(v.ht)}</td><td>${money(v.tva)}</td><td>${money(v.ttc)}</td>`;
+    tbody.appendChild(tr);
+  });
+  if(Object.keys(byCat).length===0){
+    tbody.innerHTML = `<tr><td colspan="4" class="muted">Aucune recette sur la période</td></tr>`;
+  }
+
+  // expenses table
+  const etb = $('#expenseTable tbody');
+  etb.innerHTML='';
+  exps.forEach((e,i)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${e.date}</td><td>${e.label}</td><td>${money(e.ht)}</td><td>${e.tvaRate}%</td><td>${money(e.ttc)}</td><td><button class="btn btn-sm btn-ghost" data-delExp="${i}" style="color:#e58a8a">×</button></td>`;
+    etb.appendChild(tr);
+  });
+  etb.querySelectorAll('[data-delExp]').forEach(b=>{
+    b.onclick = ()=>{
+      const idx = parseInt(b.dataset.delExp,10);
+      // map back to global expenses
+      const periodList = getPeriodExpenses();
+      const target = periodList[idx];
+      expenses = expenses.filter(x=>x !== target);
+      write(LS.expenses, expenses);
+      renderCompta();
+    };
+  });
+}
+renderCompta();
+
+$('#addExpenseBtn').addEventListener('click', ()=>{
+  const date = prompt('Date (YYYY-MM-DD)', new Date().toISOString().slice(0,10));
+  if(!date) return;
+  const label = prompt('Libellé dépense :','');
+  if(label===null) return;
+  const ht = parseFloat(prompt('Montant HT :','0')||'0');
+  const tvaRate = parseInt(prompt('TVA % (0 / 8 / 18)','18')||'18',10);
+  const tva = ht * tvaRate/100;
+  expenses.push({id:uid(), date, label: label||'Dépense', ht, tvaRate, tva, ttc: ht+tva});
+  write(LS.expenses, expenses);
+  renderCompta();
+  toast('Dépense ajoutée', true);
+});
+
+$('#exportCsvBtn').addEventListener('click', ()=>{
+  const invs = getPeriodInvoices();
+  let csv = 'Numero,Date,Client,RNC,HT,TVA,TTC,Taux\n';
+  invs.forEach(inv=>{
+    csv += [inv.number, inv.date, `"${(inv.client?.name||'').replace(/"/g,'""')}"`, inv.client?.rnc||'', inv.totals.ht.toFixed(2), inv.totals.tva.toFixed(2), inv.totals.ttc.toFixed(2), inv.tvaRate].join(',')+'\n';
+  });
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `kavonni_compta_${$('#comptaYear').value}-${$('#comptaMonth').value}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+$('#printComptaBtn').addEventListener('click', ()=>{
+  const s = read(LS.settings, settings);
+  const invs = getPeriodInvoices();
+  const recTTC = invs.reduce((sum,i)=>sum+i.totals.ttc,0);
+  const recHT = invs.reduce((sum,i)=>sum+i.totals.ht,0);
+  const recTVA = invs.reduce((sum,i)=>sum+i.totals.tva,0);
+  const exps = getPeriodExpenses();
+  const depTTC = exps.reduce((sum,e)=>sum+e.ttc,0);
+  const w = window.open('', '_blank');
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Rapport mensuel</title>
+  <style>body{font-family:Inter,Arial,sans-serif;color:#232633;padding:32px} table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #dcd8cf;padding:8px 6px;text-align:left}h1{font-family:Georgia,serif}</style></head><body>
+  <h1>Rapport mensuel – Kavonni Business Consulting</h1>
+  <p>Santo Domingo – RNC : ${s.rnc||''}<br>Période : ${$('#comptaMonth').selectedOptions[0].textContent} ${$('#comptaYear').value}</p>
+  <h3>Recettes</h3><p>HT: ${money(recHT)} &nbsp; TVA: ${money(recTVA)} &nbsp; <strong>TTC: ${money(recTTC)}</strong></p>
+  <h3>Dépenses</h3><p><strong>${money(depTTC)}</strong></p>
+  <h3>Solde</h3><p><strong>${money(recTTC - depTTC)}</strong></p>
+  <hr><p style="color:#777">Merci pour votre confiance – Kavonni Business Consulting</p>
+  <script>window.print()<\/script></body></html>`);
+  w.document.close();
+});
+
+/* ---------- SETTINGS ---------- */
+function fillSettingsForm(){
+  const s = read(LS.settings, settings);
+  $('#set_company').value = s.companyName||'';
+  $('#set_rnc').value = s.rnc||'';
+  $('#set_address').value = s.address||'';
+  $('#set_phone').value = s.phone||'';
+  $('#set_email').value = s.email||'';
+  $('#set_usd').value = s.usdRate||'';
+  $('#set_paypal').value = s.paypal||'';
+  $('#set_revolut').value = s.revolut||'';
+  // images
+  setPrevImg('#prev_home', s.siteImages?.home);
+  setPrevImg('#prev_about1', s.siteImages?.about1);
+  setPrevImg('#prev_about2', s.siteImages?.about2);
+  setPrevImg('#aboutPrev1', s.siteImages?.about1, '#aboutPrev1ph');
+  setPrevImg('#aboutPrev2', s.siteImages?.about2, '#aboutPrev2ph');
+  $('#pos_home').value = s.siteImages?.positions?.home || 'center';
+  $('#pos_about1').value = s.siteImages?.positions?.about1 || 'center';
+  $('#pos_about2').value = s.siteImages?.positions?.about2 || 'center';
+  // about card
+  $('#aboutCompanyName').textContent = s.companyName||'';
+  $('#aboutCompanyLine').textContent = `Santo Domingo — RNC : ${s.rnc||'—'}`;
+  // hero image
+  if(s.siteImages?.home){
+    $('#heroImg').src = s.siteImages.home;
+    $('#heroImg').style.objectPosition = s.siteImages.positions.home || 'center';
+    document.getElementById('heroBlock').style.setProperty('--hero-pos', (s.siteImages.positions.home || 'center'));
+  }
+}
+function setPrevImg(sel, src, placeholderSel){
+  const img = $(sel);
+  if(!img) return;
+  if(src){
+    img.src = src;
+    img.classList.remove('hidden');
+    if(placeholderSel){ const ph=$(placeholderSel); if(ph) ph.classList.add('hidden'); }
+    const ph = img.previousElementSibling;
+    if(ph && ph.tagName==='SPAN') ph.style.display='none';
+  } else {
+    img.classList.add('hidden');
+    img.removeAttribute('src');
+    const ph = img.previousElementSibling;
+    if(ph && ph.tagName==='SPAN') ph.style.display='';
+    if(placeholderSel){ const pph=$(placeholderSel); if(pph) pph.classList.remove('hidden'); }
+  }
+}
+fillSettingsForm();
+
+function handleSiteImage(fileInputId, previewId, key){
+  const inp = $(fileInputId);
+  inp.addEventListener('change', ()=>{
+    const file = inp.files[0]; if(!file) return;
+    compressImage(file, 1200, 0.65, (dataUrl, kb)=>{
+      if(kb > 250){ alert('Attention : image > 250KB ('+kb+'KB). Essayez une image plus petite.'); }
+      const s = read(LS.settings, settings);
+      s.siteImages = s.siteImages || {};
+      s.siteImages[key] = dataUrl;
+      write(LS.settings, s);
+      setPrevImg(previewId, dataUrl);
+      if(key==='home'){ $('#heroImg').src = dataUrl; }
+      // update about previews
+      if(key==='about1') setPrevImg('#aboutPrev1', dataUrl, '#aboutPrev1ph');
+      if(key==='about2') setPrevImg('#aboutPrev2', dataUrl, '#aboutPrev2ph');
+      toast('Image enregistrée', true);
+    });
+  });
+}
+handleSiteImage('#file_home', '#prev_home', 'home');
+handleSiteImage('#file_about1', '#prev_about1', 'about1');
+handleSiteImage('#file_about2', '#prev_about2', 'about2');
+
+['pos_home','pos_about1','pos_about2'].forEach(id=>{
+  $('#'+id).addEventListener('change', ()=>{
+    const s = read(LS.settings, settings);
+    const map = {pos_home:'home', pos_about1:'about1', pos_about2:'about2'};
+    const k = map[id];
+    s.siteImages.positions[k] = $('#'+id).value;
+    write(LS.settings, s);
+    if(k==='home'){
+      $('#heroImg').style.objectPosition = $('#'+id).value;
+      document.getElementById('heroBlock').style.setProperty('--hero-pos', $('#'+id).value);
+    }
+  });
+});
+
+function saveSettings(){
+  const s = read(LS.settings, settings) || {};
+  const companyName = $('#set_company').value.trim();
+  const rnc = $('#set_rnc').value.trim();
+  if(!rnc){
+    toast('RNC société obligatoire – enregistrement bloqué');
+    $('#set_rnc').focus();
+    return false;
+  }
+  s.companyName = companyName;
+  s.rnc = rnc;
+  s.address = $('#set_address').value.trim();
+  s.phone = $('#set_phone').value.trim();
+  s.email = $('#set_email').value.trim();
+  s.usdRate = parseFloat($('#set_usd').value) || null;
+  s.paypal = $('#set_paypal').value.trim();
+  s.revolut = $('#set_revolut').value.trim();
+  // password change
+  const cur = $('#adm_current').value;
+  const neu = $('#adm_new').value;
+  if(neu){
+    const real = s.adminPassword || 'admin123';
+    if(cur !== real){ toast('Mot de passe actuel incorrect'); return false; }
+    s.adminPassword = neu;
+    $('#adm_current').value=''; $('#adm_new').value='';
+    toast('Mot de passe admin mis à jour', true);
+  }
+  write(LS.settings, s);
+  settings = s;
+  // firebase stub
+  // firebase.firestore().collection('settings').doc('kbc').set(s)
+  fillSettingsForm();
+  toast('Paramètres sauvegardés', true);
+  return true;
+}
+
+$('#settingsForm').addEventListener('submit', e=>{ e.preventDefault(); saveSettings(); });
+
+$('#exportSettingsBtn').addEventListener('click', ()=>{
+  const data = read(LS.settings, settings);
+  const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'kbc_settings.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+$('#importSettingsFile').addEventListener('change', e=>{
+  const f = e.target.files[0]; if(!f) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{
+      const obj = JSON.parse(reader.result);
+      write(LS.settings, obj);
+      settings = obj;
+      fillSettingsForm();
+      toast('Paramètres importés', true);
+    }catch(err){ toast('JSON invalide'); }
+  };
+  reader.readAsText(f);
+  e.target.value='';
+});
+$('#resetSettingsBtn').addEventListener('click', ()=>{
+  if(!confirm('Réinitialiser les paramètres ?')) return;
+  localStorage.removeItem(LS.settings);
+  location.reload();
+});
+
+/* ---------- Lang toggle ---------- */
+$('#langToggle').addEventListener('click', ()=>{
+  LANG = LANG === 'fr' ? 'es' : 'fr';
+  localStorage.setItem('kbc_lang', LANG);
+  applyLang();
+  toast(LANG==='es' ? 'Idioma: Español' : 'Langue : Français', true);
+});
+applyLang();
+
+// v3.3 fix: hero CTA buttons
+document.getElementById('heroServicesBtn')?.addEventListener('click', ()=>{
+  document.getElementById('shopScroll')?.scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('heroInvoiceBtn')?.addEventListener('click', ()=>{
+  goTab('factures');
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+/* First load cart count init done earlier */
+/* Carga instantánea: already loading from localStorage first */
+/* Sync Firebase in background (simulated) */
+setTimeout(()=>{ $('#syncBadge').textContent='Sync ✓ Local'; }, 450);
+
+/* Expose saveSettings globally per spec */
+window.saveSettings = saveSettings;
+
+/* Start on boutique - v3.3 auto admin */
+setAdmin(true);
+goTab('boutique');
+
+
+// --- Theme Jour/Nuit KBC ---
+(function(){
+  function applyTheme(t){
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('kbc_theme', t);
+    const btn = document.getElementById('themeToggle');
+    if(btn) btn.textContent = t === 'light' ? '☀️' : '🌙';
+  }
+  const savedTheme = localStorage.getItem('kbc_theme') || 'dark';
+  applyTheme(savedTheme);
+  document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    applyTheme(cur === 'light' ? 'dark' : 'light');
+  });
+})();
+
+// --- Currency RD$ / € toggle ---
+(function(){
+  function getCur(){ try{ const s = JSON.parse(localStorage.getItem('kbc_settings')||'{}'); return s.currency || 'DOP'; }catch(e){ return 'DOP'; } }
+  function setCur(c){ const s = JSON.parse(localStorage.getItem('kbc_settings')||'{}'); s.currency=c; localStorage.setItem('kbc_settings', JSON.stringify(s)); const b=document.getElementById('currencyToggle'); if(b) b.textContent = c==='EUR'?'€':'RD$'; location.reload(); }
+  const b=document.getElementById('currencyToggle');
+  if(b){ b.textContent = getCur()==='EUR'?'€':'RD$'; b.addEventListener('click', ()=> setCur(getCur()==='EUR'?'DOP':'EUR')); }
+})();
+
+</script>
+</body>
+</html>
